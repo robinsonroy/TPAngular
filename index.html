@@ -30,9 +30,9 @@
                 <div class="type pizza-type">
                     <span class="text-note">Recette</span>
                     <div>
-                        <label>
-                            <input type="radio" name="type" ng-repeat="type in types"/>
-                            {{type.name}};
+                        <label ng-repeat="type in types">
+                            <input type="radio" name="type"/>
+                            {{type.name}}
                             <span class="description">type.description.body</span>
                         </label>
                     </div>
