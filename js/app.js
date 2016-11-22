@@ -2,7 +2,8 @@
 var app = angular.module('app', []);
 app.controller('appController', function($scope){
   //Lionel
-
+  $scope.ordered = false;
+  $scope.prenom = "";
 
 
   //Robinson
@@ -12,7 +13,7 @@ app.controller('appController', function($scope){
 
   $scope.userChoose =
     {
-      nbParts : 10,
+      nbParts : '',
       type : 'Margherita',
       pate : 'Classique',
       extras : [
@@ -21,8 +22,6 @@ app.controller('appController', function($scope){
         }
       ]
     };
-
-  console.log($scope.userChoose.nbParts);
 
   $scope.next = false;
 
