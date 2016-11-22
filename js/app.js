@@ -2,7 +2,8 @@
 var app = angular.module('app', []);
 app.controller('appController', function($scope){
   //Lionel
-
+  $scope.ordered = false;
+  $scope.prenom = "";
 
 
   //Robinson
@@ -23,6 +24,6 @@ app.controller('appController', function($scope){
     },
   ];
 
-  
+
 
 });

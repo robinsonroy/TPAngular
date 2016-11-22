@@ -25,7 +25,7 @@
                   <small>Cooked with love</small>
                 </h1>
             </div>
-            <div class="row typography-row main">
+            <div class="row typography-row main" ng-hide="ordered">
 
                 <div class="type pizza-type">
                     <span class="text-note">Recette</span>
@@ -63,7 +63,7 @@
                 <div class="infos-client">
                     <div class="type">
                         <span class="text-note">Prénom</span>
-                        <input type="text" />
+                        <input type="text" ng-model="prenom"/>
                     </div>
                     <div class="type">
                         <span class="text-note">Adresse</span>
@@ -77,13 +77,13 @@
                         <input type="number" />
                     </div>
                     <br />
-                    <button class="btn btn-success done">Allez hop, j'ai très faim !</button>
+                    <button class="btn btn-success done" ng-click="ordered=true">Allez hop, j'ai très faim !</button>
                 </div>
                 <p><i>Les prix sont affichés pour 1 pizza entière.</i></p>
                 <button class="btn btn-success next-step">Etape suivante</button>
             </div>
-            <div>
-                <h3>Merci PRENOM !<br/>C'est livré dans 15 minutes.</h3>
+            <div ng-show="ordered">
+                <h3>Merci {{ prenom }} !<br/>C'est livré dans 15 minutes.</h3>
             </div>
         </div>
         <!-- /.container -->
