@@ -30,8 +30,8 @@
                 <div class="type pizza-type">
                     <span class="text-note">Recette</span>
                     <div>
-                        <label ng-repeat="type in types" ng-mouseenter="type.description.show = true" ng-mouseleave="type.description.show = false">
-                            <input type="radio" name="type"/>
+                        <label ng-repeat="type in types track by $index" ng-mouseenter="type.description.show = true" ng-mouseleave="type.description.show = false">
+                            <input type="radio" name="type" ng-model="userChoose.type" ng-value="types[$index]"/>
                             <span>{{type.name}}</span>
                             <span class="description" ng-show="type.description.show">{{type.description.body}}</span>
 
@@ -47,19 +47,18 @@
 
                 <div class="type">
                     <span class="text-note">Pâte</span>
-                    <label ng-repeat="pate in pates">
-                      <input type="radio" name="pate" />
+                    <label ng-repeat="pate in pates track by $index">
+                      <input type="radio" name="pate" ng-model="userChoose.pate" ng-value="pates[$index]" />
                       {{ pate.name }}
                     </label>
                 </div>
 
                 <div class="type">
                     <span class="text-note">Extras</span>
-                        <label ng-repeat="extra in extras">
-                          <input name="extra" type="checkbox" /> {{extra.name}}
+                        <label ng-repeat="extra in extras track by $index">
+                          <input name="extra" type="checkbox" ng-model="userChoose.extras[$index]" ng-true-value="true" ng-false-value="false"/> {{extra.name}}
                         </label>
                 </div>
-
                 <div class="infos-client" ng-show="next">
                     <div class="type">
                         <span class="text-note">Prénom</span>
@@ -92,7 +91,7 @@
           <div class="tile">
             <img src="images/icons/svg/paper-bag.svg" class="tile-image big-illustration">
             <h3 class="tile-title">Total</h3>
-            <p>X€</p>
+            <p>{{ (userChoose.nbParts/6) * (userChoose.type.price + userChoose.pate.price) }}€</p>
             <a class="btn btn-primary btn-large btn-block" href="">Payer</a>
           </div>
         </div>

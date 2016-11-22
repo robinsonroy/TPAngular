@@ -14,14 +14,10 @@ app.controller('appController', function($scope){
 
   $scope.userChoose =
     {
-      nbParts : '',
-      type : 'Margherita',
-      pate : 'Classique',
-      extras : [
-        {
-        name:'none'
-        }
-      ]
+      nbParts : '6',
+      type : types[0],
+      pate : pates[0],
+      extras : [true, true, false, false] // Olive + Anchois
     };
 
 
