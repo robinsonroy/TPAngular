@@ -32,9 +32,8 @@
                     <div>
                         <label ng-repeat="type in types" ng-mouseenter="type.description.show = true" ng-mouseleave="type.description.show = false">
                             <input type="radio" name="type"/>
-                            <span>{{type.name}}</span>
+                            <span>{{type.name}} ({{type.price}}€)</span>
                             <span class="description" ng-show="type.description.show">{{type.description.body}}</span>
-
                         </label>
                     </div>
                 </div>
@@ -49,14 +48,15 @@
                     <span class="text-note">Pâte</span>
                     <label ng-repeat="pate in pates">
                       <input type="radio" name="pate" />
-                      {{ pate.name }}
+                      <span>{{ pate.name }} <span ng-show="pate.price != 0">(+{{pate.price}}€)</span></span>
                     </label>
                 </div>
 
                 <div class="type">
                     <span class="text-note">Extras</span>
                         <label ng-repeat="extra in extras">
-                          <input name="extra" type="checkbox" /> {{extra.name}}
+                          <input name="extra" type="checkbox" />
+                          <span>{{extra.name}} (+{{extra.price}}€) </span>
                         </label>
                 </div>
 
