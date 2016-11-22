@@ -30,10 +30,10 @@
                 <div class="type pizza-type">
                     <span class="text-note">Recette</span>
                     <div>
-                        <label ng-repeat="type in types">
+                        <label ng-repeat="type in types" ng-mouseenter="type.description.show = true" ng-mouseleave="type.description.show = false">
                             <input type="radio" name="type"/>
-                            {{type.name}}
-                            <span class="description">type.description.body</span>
+                            <span>{{type.name}}</span>
+                            <span class="description" ng-show="type.description.show">{{type.description.body}}</span>
                         </label>
                     </div>
                 </div>
