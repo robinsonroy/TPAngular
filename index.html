@@ -47,12 +47,17 @@
 
                 <div class="type">
                     <span class="text-note">Pâte</span>
-                    <label><input type="radio" name="pate" />PATE</label>
+                    <label ng-repeat="pate in pates">
+                      <input type="radio" name="pate" />
+                      {{ pate.name }}
+                    </label>
                 </div>
 
                 <div class="type">
                     <span class="text-note">Extras</span>
-                        <label><input name="extra" type="checkbox" />EXTRA</label>
+                        <label ng-repeat="extra in extras">
+                          <input name="extra" type="checkbox" /> {{extra.name}}
+                        </label>
                 </div>
 
                 <div class="infos-client" ng-show="next">
