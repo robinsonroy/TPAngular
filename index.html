@@ -41,7 +41,8 @@
                 <div class="type nb-parts">
                     <span class="text-note">Nombre de parts= </span>
                     <input type="text"  ng-model="userChoose.nbParts"/>
-                    <span class="pizza-1 pizza-pict"></span>
+                    <span ng-repeat="slice in sliceArray(userChoose.nbParts) track by $index" class="pizza-{{slice}} pizza-pict">
+                    </span>
                 </div>
 
                 <div class="type">
@@ -67,10 +68,11 @@
                     </div>
                     <div class="type">
                         <span class="text-note">Adresse</span>
-                        <div>
-                            <input type="text" />
+                        <input type="text"/>
+                        <div ng-repeat="i in getArrayFormNumber(address) track by $index">
+                            <input type="text"/>
                         </div>
-                        <button class="btn btn-default add">Ajouter une autre ligne d'adresse</button>
+                        <button class="btn btn-default add" ng-click="countAdresse()">Ajouter une autre ligne d'adresse</button>
                     </div>
                     <div class="type">
                         <span class="text-note">Code Postal</span>
