@@ -60,7 +60,7 @@
                         </label>
                 </div>
 
-                <div class="infos-client">
+                <div class="infos-client" ng-show="next">
                     <div class="type">
                         <span class="text-note">Prénom</span>
                         <input type="text" ng-model="prenom"/>
@@ -80,7 +80,7 @@
                     <button class="btn btn-success done" ng-click="ordered=true">Allez hop, j'ai très faim !</button>
                 </div>
                 <p><i>Les prix sont affichés pour 1 pizza entière.</i></p>
-                <button class="btn btn-success next-step">Etape suivante</button>
+                <button class="btn btn-success next-step" ng-click="next=true" ng-hide="next">Etape suivante</button>
             </div>
             <div ng-show="ordered">
                 <h3>Merci {{ prenom }} !<br/>C'est livré dans 15 minutes.</h3>

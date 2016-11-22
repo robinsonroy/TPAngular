@@ -24,6 +24,11 @@ app.controller('appController', function($scope){
     },
   ];
 
+<<<<<<< HEAD
+=======
+  $scope.next = false;
+
+>>>>>>> origin/master
 
 
 });
