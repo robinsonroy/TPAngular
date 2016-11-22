@@ -10,9 +10,9 @@ app.controller('appController', function($scope){
   $scope.pates = pates;
   $scope.extras = extras;
 
-  $scope.userChoose = [
+  $scope.userChoose =
     {
-      nbParts : '0',
+      nbParts : 10,
       type : 'Margherita',
       pate : 'Classique',
       extras : [
@@ -20,8 +20,9 @@ app.controller('appController', function($scope){
         name:'none'
         }
       ]
-    },
-  ];
+    };
+
+  console.log($scope.userChoose.nbParts);
 
   $scope.next = false;
 
