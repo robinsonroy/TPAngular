@@ -23,6 +23,8 @@ app.controller('appController', function($scope){
     },
   ];
 
-  
+  $scope.next = false;
+
+
 
 });
