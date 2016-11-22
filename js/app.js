@@ -6,5 +6,20 @@ app.controller('appController', function($scope){
 
 
   //Robinson
+  $scope.types = types;
+  $scope.pates = pates;
+  $scope.extras = extras;
 
+  $scope.userChoose = [
+    {
+      nbParts : '0',
+      type : 'Margherita',
+      pate : 'Classique',
+      extras : [
+        {
+        name:'none'
+        }
+      ]
+    },
+  ];
 });
