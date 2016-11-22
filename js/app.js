@@ -16,8 +16,7 @@ app.controller('appController', function($scope){
       nbParts : '6',
       type : types[0],
       pate : pates[0],
-      extras : [true, true, false, false] // Olive + Anchois
-
+      extras : [false, false, false, false]
     };
 
   $scope.next = false;
@@ -49,5 +48,6 @@ app.controller('appController', function($scope){
     }
     return array;
   }
+
 
 });
