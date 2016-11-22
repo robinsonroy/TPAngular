@@ -34,11 +34,11 @@ Groupes de 2
 
 Bonus
 =======================
-	- Afficher visuellement le nombre de parts et le nombre de pizzas appropriées en dessous du champs "Nombre de parts". 
+	- Afficher visuellement le nombre de parts et le nombre de pizzas appropriées en dessous du champs "Nombre de parts".
 		- Construire une fonction qui revoie un tableau représentant le nombre de parts à afficher sur chaque pizza.
 			Exemple pour 13 parts : "sliceArray(13)" renvois [6, 6, 1]
 			Exemple de code : "ng-repeat="slice in sliceArray(13) track by $index"
-			
+
 			Les classes CSS pizza-1 ... pizza-6 sont disponibles pour afficher les parts.
 			Exemple : <span class="pizza-5 pizza-pict"></span> affiche une pizza avec 5 parts
 
@@ -65,7 +65,7 @@ AIDE // Code Snippets
 			...
 		</div>
 
-		Avec 
+		Avec
 			$scope.x = new Array(5);
 
 	- Gestion des checkbox pour les Extras (olives, anchois, etc.) :
@@ -79,4 +79,3 @@ AIDE // Code Snippets
 			// Ajoute le prix de l'extra, s'il est sélectionné
 			if($scope.choice.extra[key]) total += extra.price;
 		});
-
