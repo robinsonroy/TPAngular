@@ -59,11 +59,11 @@
                 <div class="type">
                     <span class="text-note">Extras</span>
 
-                        <label ng-repeat="extra in extras track by $index">
-                          <input name="extra" type="checkbox" ng-model="userChoose.extras[$index]" ng-true-value="true" ng-false-value="false"/>
-                          <span>{{extra.name}} (+{{extra.price}}€) </span>
+                      <label ng-repeat="extra in extras track by $index" >
+                        <input name="extra" type="checkbox" ng-model="extra.checked" ng-change="addExtra(extras[$index], $index)"/>
+                        <span>{{extra.name}} (+{{extra.price}}€) </span>
 
-                        </label>
+                      </label>
                 </div>
                 <div class="infos-client" ng-show="next">
                     <div class="type">
@@ -98,7 +98,7 @@
           <div class="tile">
             <img src="images/icons/svg/paper-bag.svg" class="tile-image big-illustration">
             <h3 class="tile-title">Total</h3>
-            <p>{{ (userChoose.nbParts/6) * (userChoose.type.price + userChoose.pate.price) }}€</p>
+            <p>{{ checkPrice() |currency : '€' : 2 }}€</p>
             <a class="btn btn-primary btn-large btn-block" href="">Payer</a>
           </div>
         </div>
